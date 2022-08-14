@@ -1,33 +1,39 @@
-button{
+button {
   outline: none;
   border: 0;
   cursor: pointer;
 }
+
 /* Habit part */
-.habit{
+.habit {
   font-size: 2.5rem;
   padding: 0.5em;
   list-style: none;
 }
 
-.habit-button{
+.habit-button {
   font-size: 2.5rem;
   margin: 0 0.1em;
   background-color: transparent;
 }
-.habit-button:hover{
+
+.habit-button:hover {
   opacity: 0.8;
 }
-.habit-increase{
-  color:yellowgreen;
+
+.habit-increase {
+  color: yellowgreen;
 }
-.habit-decrease{
-  color:tomato;
+
+.habit-decrease {
+  color: tomato;
 }
-.habit-delete{
-  color:gray;
+
+.habit-delete {
+  color: gray;
 }
-.habit-count{
+
+.habit-count {
   display: inline-block;
   text-align: center;
   font-size: 2rem;
@@ -40,47 +46,56 @@ button{
   color: white;
   border-radius: 50%;
 }
-.navbar{
+
+.navbar {
   display: block;
   font-size: 48px;
   background-color: antiquewhite;
   padding: 40px;
   align-items: center;
 }
-.navbar__icon{
+
+.navbar__icon {
   color: green;
   margin-right: 20px;
 }
-.input{
+
+.input {
   padding: 20px;
-  align-items: center;
-}
-.input__type{
-  width: 20%;
-  height: 40px;
-  font-size: 20px;
+
 }
 
-.input__btn{
-  block-size: 0%;
-  display: inline-block;
-  padding: 20px;
-  border-radius: 20%;
+.input__type {
+  font-size: 2rem;
+}
+
+.input__btn {
+  border-radius: 5%;
   margin-left: 5px;
+  font-size: 1.5rem;
   background-color: green;
   color: white;
+  height: 100%;
+  padding: 0.3em 0.5em;
 }
 
-.navbar__count{
-    display: inline-block;
-    text-align: center;
-    font-size: 2rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    line-height: 2.5rem;
-    margin-left: 0.2em;
-    margin-right: 0.5em;
-    background-color: green;
-    color: white;
-    border-radius: 50%;
-  }
+.navbar__count {
+  display: inline-block;
+  text-align: center;
+  font-size: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin-left: 0.2em;
+  margin-right: 0.5em;
+  background-color: green;
+  color: white;
+  border-radius: 50%;
+}
+.habits__reset{
+  font-size: 1.5rem;
+  padding: 0.2em 1em;
+  background-color: green;
+  color:white;
+  margin-left: 100px;
+}

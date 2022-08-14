@@ -14,9 +14,12 @@ class App extends Component {
 };
 
 onIncrement = (habit) => {
-  const habits = [...this.state.habits];
-  const index = habits.indexOf(habit);
-  habits[index].count++;
+  const habits = this.state.habits.map(item => {
+    if(item.id === habit.id){
+      return { ...habit, count: habit.count + 1}
+    }
+    return item;
+  });
   this.setState({habits});
 }
 onDecrement = (habit) => {
@@ -32,9 +35,17 @@ onDelete = (habit) => {
   
 }
 handleAdd = (name) => {
-  const habits = [...this.state.habits ,{id : Date.now() ,name : name, count: 0} ];
+  const habits = [...this.state.habits ,{id : Date.now() ,name, count: 0} ];
   this.setState({habits});
-}
+};
+handleReset = () => {
+  const habits = this.state.habits.map(item => {
+  item.count = 0
+  return item;
+  });
+  this.setState({habits});
+};
+
   render() {
     return (
       <>
@@ -46,6 +57,7 @@ handleAdd = (name) => {
         onDecrement = {this.onDecrement}
         onDelete = {this.onDelete}
         onAdd = {this.handleAdd}
+        onReset = {this.handleReset}
         />
       </>
     )
