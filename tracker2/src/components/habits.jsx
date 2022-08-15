@@ -9,6 +9,7 @@ export default function Habits(props){
             handleplus={props.handleplus}
             handleminus={props.handleminus}
             handledelete={props.handledelete}
+            handleAdd ={props.handleAdd}
             />
             )}
         </div>

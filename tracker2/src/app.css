@@ -41,3 +41,24 @@
 .habit__delete{
   color: gray;
 }
+
+.habitForm{
+  padding: 20px;
+  background-color:wheat;
+}
+.habitForm__input{
+  width: 30%;
+  height: 30px;
+}
+.habitForm__btn{
+  display: inline-block;
+  align-items: center;
+  border-radius: 20%;
+  width: 60px;
+  height: 35px;
+  margin-left: 10px;
+  padding: 5px;
+  font-size: large;
+  background-color: green;
+  color: white;
+}
