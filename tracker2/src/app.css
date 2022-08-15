@@ -1,0 +1,43 @@
+.nav{
+  display: block;
+  background-color: antiquewhite;
+  padding: 20px;
+  font-size: 30px;
+}
+.nav__icon{
+  margin-right: 20px;
+  color: green;
+}
+
+.nav__span{
+  display: inline-block;
+  border-radius: 50%;
+  background-color: green;
+  padding: 5px 13px;
+  color: white;
+  margin-left: 10px;
+}
+.habit__list{
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 10px;
+  font-size: 25px;
+}
+.habit__icon{
+  font-size: 30px;
+  background-color: transparent;
+  border: 0;
+  
+}
+
+.habit__minus{
+  color: tomato;
+}
+.habit__plus{
+  color: rgb(67, 173, 226);
+}
+.habit__delete{
+  color: gray;
+}
