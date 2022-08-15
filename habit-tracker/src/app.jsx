@@ -18,15 +18,19 @@ onIncrement = (habit) => {
     if(item.id === habit.id){
       return { ...habit, count: habit.count + 1}
     }
+    // 같지 않으면 
     return item;
   });
   this.setState({habits});
 }
 onDecrement = (habit) => {
-  const habits = [...this.state.habits];
-  const index = habits.indexOf(habit);
-  const cnt = habits[index].count-1;
-  habits[index].count = cnt < 0 ? 0 : cnt;
+  const habits = this.state.habits.map(item => {
+    if(item.id === habit.id){
+      const count = habit.count - 1 ;
+      return { ...habit, count: count < 0 ? 0 : count}
+    }
+    return item;
+  });
   this.setState({habits});
 }
 onDelete = (habit) => {
@@ -40,8 +44,10 @@ handleAdd = (name) => {
 };
 handleReset = () => {
   const habits = this.state.habits.map(item => {
-  item.count = 0
-  return item;
+    if(item.count !==0){
+      return { ...item, count: 0}
+    }
+    return item;
   });
   this.setState({habits});
 };
