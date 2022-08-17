@@ -1,11 +1,17 @@
 import React from 'react';
-
-
-function VideoItem(props) {
+import styles from './video_item.module.css';
+function VideoItem({ video: { snippet } }) {
     return (
-        <div>
-            {props.video.snippet.title}
-        </div>
+        <li className={styles.container}>
+            <div className={styles.video}>
+                <img className={styles.thumbnail} src={snippet.thumbnails.medium.url} alt="Thumbnail" />
+                <div className={styles.metadata}>
+                    <p className={styles.title} >{snippet.title}</p>
+                    <p className={styles.channel}>{snippet.channelTitle}</p>
+                </div>
+            </div>
+
+        </li>
     );
 }
 export default VideoItem;
