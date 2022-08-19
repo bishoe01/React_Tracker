@@ -1,0 +1,14 @@
+.detail {
+    padding: 0.2em;
+}
+
+.description {
+    white-space: pre-wrap;
+}
+
+.tag{
+    flex-wrap: wrap;
+    display: inline-block;
+    padding: 0.2em;
+    color: skyblue;
+}
