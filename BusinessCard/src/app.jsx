@@ -1,6 +1,6 @@
 import { Routes,Route } from 'react-router-dom';
 import styles from './app.module.css';
-import Maker from './components/home/maker';
+import Maker from './components/maker/maker';
 import Login from './components/login/login';
 
 function App({authService}) {
