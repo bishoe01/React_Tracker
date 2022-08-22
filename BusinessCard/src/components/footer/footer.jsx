@@ -1,10 +1,10 @@
 import React from 'react';
-
+import styles from './footer.module.css';
 function Footer(props) {
     return (
-        <h1>
-            footer
-        </h1>
+        <footer className={styles.footer}>
+            <p className={styles.title}>BISHOE`S Project</p>
+        </footer>
     );
 }
 
