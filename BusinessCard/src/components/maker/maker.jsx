@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Editor from '../editor/editor';
 import Footer from '../footer/footer';
@@ -10,6 +10,39 @@ function Maker({authService}) {
     const onLogout = () => {
         authService.logout();
     };
+    const [cards, setCard] = useState([
+        {
+            id: '1',
+            name:"Bishoe",
+            univ :"HANYANG ERICA",
+            theme:"light",
+            title:"FrontEnd",
+            email:"bishoe@gmail.com",
+            message:"Hello",
+            filename:"bishoe",
+            fileURL: null,
+        },{
+            id: '2',
+            name:"Bishoe1",
+            univ :"HANYANG ERICA",
+            theme:"colorful",
+            title:"FrontEnd",
+            email:"bishoe@gmail.com",
+            message:"Hello",
+            filename:"bishoe",
+            fileURL: null,
+        },{
+            id: '3',
+            name:"Bishoe2",
+            univ :"HANYANG ERICA",
+            theme:"dark",
+            title:"FrontEnd",
+            email:"bishoe@gmail.com",
+            message:"Hello",
+            filename:"bishoe3",
+            fileURL: null,
+        }
+    ]);
     useEffect(() => {
         authService.onAuthChange(user => {
             if(!user){
@@ -21,8 +54,8 @@ function Maker({authService}) {
         <section className={styles.maker}>
         <Header onLogout={onLogout}/>
         <div className={styles.container}>
-            <Editor/>
-            <Preview/>
+            <Editor cards={cards}/>
+            <Preview cards={cards}/>
         </div>
         <Footer/>
         </section> 
