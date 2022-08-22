@@ -1,19 +1,24 @@
-import { GoogleAuthProvider ,GithubAuthProvider,getAuth,signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, GithubAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 class AuthService {
-    constructor(app){
+    constructor(app) {
         this.firebaseAuth = getAuth(app);
         this.googleProvider = new GoogleAuthProvider();
         this.githubProvider = new GithubAuthProvider();
     }
-    login(providerName){
+    login(providerName) {
         const authProvider = this.getProvider(providerName);
-        return signInWithPopup(this.firebaseAuth,authProvider);
+        return signInWithPopup(this.firebaseAuth, authProvider);
     }
-    logout(){
+    logout() {
         this.firebaseAuth.signOut();
     }
-    getProvider(providerName){
-        switch(providerName){
+    onAuthChange(onUserChanged) {
+        this.firebaseAuth.onAuthStateChanged((user) => {
+            onUserChanged(user);
+        });
+    }
+    getProvider(providerName) {
+        switch (providerName) {
             case 'Google':
                 return this.googleProvider;
             case 'Github':
@@ -27,4 +32,4 @@ class AuthService {
 
 
 export default AuthService;
-    
+
