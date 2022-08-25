@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import Button from '../button/button';
 import ImageFileInput from '../image_file_input/image_file_input';
 import styles from './blankform.module.css';
-function Blankform({ onAdd }) {
+function Blankform({ UpdateCard }) {
     const nameRef = useRef();
     const univRef = useRef();
     const themeRef = useRef();
@@ -16,15 +16,15 @@ function Blankform({ onAdd }) {
             id: Date.now(),
             name: nameRef.current.value || ' ',
             univ: univRef.current.value || ' ',
-            theme: themeRef.current.value || ' ',
+            theme: themeRef.current.value,
             title: titleRef.current.value || ' ',
             email: emailRef.current.value || ' ',
             message: messageRef.current.value || ' ',
             fileName: ' ',
-            fileURL: ' ',
+            fileURL: null,
         };
         formRef.current.reset();
-        onAdd(card);
+        UpdateCard(card);
     };
     return (
         <form ref={formRef} className={styles.form}>
